@@ -51,8 +51,7 @@
         font-size: 30px;
         vertical-align: middle;
       }
-      #conteudo {
-      }
+
       h2 {
         font-size: 22px;
       }
@@ -248,22 +247,29 @@
           align-self: center;
         }
       }
+      .active {
+        font-weight: bold !important;
+      }
+      .navbar-nav a:hover {
+        background-color: rgba(255, 255, 255, 0.082);
+        border-radius: 4px;
+      }
     </style>
   </head>
 
   <body name="body">
     <nav
-      class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3"
+      class="navbar navbar-expand navbar-light bg-white-50 d-flex justify-content-between mb-3"
     >
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="">Todos</a>
-        <a class="nav-item nav-link" href="">Aguardando</a>
-        <a class="nav-item nav-link" href="">Aprovado</a>
-        <a class="nav-item nav-link" href="">Entregue</a>
+        <a class="nav-item nav-link active text-light" href="">Todos</a>
+        <a class="nav-item nav-link text-light" href="">Aguardando</a>
+        <a class="nav-item nav-link text-light" href="">Aprovado</a>
+        <a class="nav-item nav-link text-light" href="">Entregue</a>
       </div>
       <div class="btnAdd">
         <a href="/pedido/formulario">
-          <button class="btn btn-outline-primary my-2 my-sm-0">
+          <button class="btn btn-primary my-2 my-sm-0">
             <ion-icon name="add-circle-outline"> </ion-icon>
             Novo
           </button>
