@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Icones -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <title>home</title>
+
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+
+        min-height: 100vh;
+        height: fit-content;
+        color: #efefff;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 17px;
+        background-image: -webkit-gradient(
+          linear,
+          left bottom,
+          left top,
+          color-stop(0.33, rgb(59, 59, 59)),
+          color-stop(0.67, rgb(39, 39, 43))
+        );
+        background-repeat: no-repeat;
+      }
+      ion-icon {
+        font-size: 30px;
+        vertical-align: middle;
+      }
+      #conteudo {
+      }
+      h2 {
+        font-size: 22px;
+      }
+      a {
+        color: #3bb7ff;
+      }
+      .descricao {
+        max-width: 500px;
+        word-wrap: normal;
+        font-size: 17px;
+      }
+      #container {
+        font-size: 19px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: column;
+        padding: 2px;
+        min-height: 99vh;
+        height: fit-content;
+      }
+      .informacoes + .informacoes {
+        margin-top: 2rem;
+      }
+
+      .informacoes {
+        margin-top: 1rem;
+        height: fit-content;
+        align-self: center;
+        background-color: rgba(0, 2, 2, 0.377);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3.8px);
+        -webkit-backdrop-filter: blur(5.8px);
+        border: 1px solid rgba(17, 17, 17, 0.3);
+        border-radius: 5px;
+        word-break: break-all;
+        min-width: fit-content;
+        overflow-wrap: break-word;
+        word-break: break-all;
+        word-wrap: break-word;
+      }
+
+      input {
+        font-size: 19px;
+        color: #fff;
+        border-radius: 3px;
+        border: 2px solid #ccc;
+        background-color: transparent;
+        width: 97%;
+      }
+      input:focus {
+        outline: none;
+      }
+
+      button {
+        min-width: 49%;
+        border: none;
+        padding: 0.5rem 1rem;
+        margin-top: 0.3rem;
+        text-decoration: none;
+        background: #03428f;
+        color: #ffffff;
+        font-family: sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        text-align: center;
+        transition: background 250ms ease-in-out, transform 150ms ease;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border-radius: 3px;
+        min-height: calc(fit-content + 2rem);
+        height: 2.8rem;
+      }
+      .btcarrinho {
+        background-color: #c7e0ff;
+        color: #0053ba;
+      }
+      .btcarrinho:hover,
+      .btcarrinho:focus {
+        background-color: rgb(49, 142, 255);
+        color: #dfecfd;
+      }
+
+      button:hover,
+      button:focus {
+        background: #0053ba;
+      }
+
+      button:active {
+        transform: scale(0.99);
+      }
+      .btgroup {
+        display: flex;
+        justify-content: space-between;
+      }
+      #bgChange {
+        font-size: 17px;
+        margin-top: 10px;
+        display: block;
+        padding: 4px;
+        background-color: rgba(0, 2, 2, 0.233);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3.8px);
+        -webkit-backdrop-filter: blur(5.8px);
+        border: 1px solid rgba(17, 17, 17, 0.3);
+        border-radius: 3px;
+        width: 100px;
+      }
+      #bgChange:hover {
+        background-color: rgba(0, 2, 2, 0.63);
+        cursor: pointer;
+      }
+      .produto {
+        display: flex;
+      }
+      .imgWrap {
+        transform: scale(0.9);
+        border-radius: 5px 0px 0px 5px;
+        overflow: hidden;
+        max-height: 29rem;
+        min-width: fit-content;
+      }
+      .imgWrap img {
+        max-width: 256px;
+      }
+      .anuncio {
+        display: flex;
+        padding: 0.5rem;
+        min-width: 50%;
+        flex-direction: column;
+        place-content: space-between;
+      }
+      .titulo {
+        line-height: 0.9;
+
+        word-break: break-word;
+      }
+      .verde {
+        color: #1ae788;
+      }
+      .linkPequeno {
+        font-size: 16px;
+        color: #3bb7ff;
+        text-decoration: none;
+      }
+      h4 {
+        font-size: 24px;
+        margin: 0.8rem 0.1rem;
+      }
+      p {
+        word-break: break-word;
+      }
+      /* informacoes: */
+      .loop {
+        margin-top: 2rem;
+        height: fit-content;
+        align-self: center;
+        background-color: rgba(0, 2, 2, 0.377);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3.8px);
+        -webkit-backdrop-filter: blur(5.8px);
+        border: 1px solid rgba(17, 17, 17, 0.3);
+        border-radius: 5px;
+        word-break: break-all;
+        min-width: fit-content;
+        overflow-wrap: break-word;
+        word-break: break-all;
+        word-wrap: break-word;
+      }
+      .loop:first-of-type {
+        margin-top: 5rem !important;
+      }
+      .loop:last-of-type {
+        margin-bottom: 5rem !important;
+      }
+      .btnAdd {
+        margin-right: 1rem;
+      }
+      @media only screen and (max-width: 700px) {
+        .btgroup {
+          flex-direction: column;
+          gap: 0.7rem;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        .produto {
+          flex-direction: column;
+        }
+        .titulo {
+          text-align: center;
+        }
+        .imgWrap {
+          align-self: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body name="body">
+    <nav
+      class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3"
+    >
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="">Todos</a>
+        <a class="nav-item nav-link" href="">Aguardando</a>
+        <a class="nav-item nav-link" href="">Aprovado</a>
+        <a class="nav-item nav-link" href="">Entregue</a>
+      </div>
+      <div class="btnAdd">
+        <a href="/pedido/formulario">
+          <button class="btn btn-outline-primary my-2 my-sm-0">
+            <ion-icon name="add-circle-outline"> </ion-icon>
+            Novo
+          </button>
+        </a>
+      </div>
+    </nav>
+
+    <div id="conteudo">
+      <div id="container">
+        <div class="loop" th:each="pedido : ${pedidos}">
+          <div class="produto">
+            <div class="imgWrap">
+              <img th:src="${pedido.getUrlImagem()}" alt="" />
+            </div>
+            <div class="anuncio">
+              <div>
+                <div class="titulo">
+                  <div th:text="${pedido.nome}"></div>
+                </div>
+                <div class="valor">
+                  <h4>R$<span th:text="${pedido.getValor()}"></span></h4>
+                  em
+                  <span class="verde"
+                    >10x de R$
+                    <span th:text="${(pedido.getValor()*1000) /10}"></span>
+                    sem juros </span
+                  ><br />
+                  <a href="#" class="linkPequeno"> ver meios de pagamento</a>
+                </div>
+                <div class="descricao">
+                  <p th:text="${pedido.getDescricao()}"></p>
+                </div>
+              </div>
+              <div class="btgroup">
+                <button
+                  class="btn btn-primary"
+                  th:href="${pedido.getUrlProduto()}"
+                >
+                  Comprar Agora
+                </button>
+
+                <button class="btn btn-outline-light">
+                  Adicionar ao carrinho
+                  <ion-icon name="cart-sharp"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
