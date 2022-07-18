@@ -3,9 +3,11 @@ package br.com.alura.mvc.mudi.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.alura.mvc.mudi.DAO.PedidoDAO;
+import br.com.alura.mvc.mudi.model.StatusPedido;
 
 @Controller
 public class HomeController {
@@ -19,6 +21,18 @@ public class HomeController {
                 mv.addObject("pedidos", pedidoDAO.findAll());
                 return mv;
         }
-        
+
+        @GetMapping("/{status}")
+        public ModelAndView status(@PathVariable("status") String status) {
+                ModelAndView mv = new ModelAndView("home");
+
+                try {
+                        mv.addObject("pedidos", pedidoDAO.findByStatus(StatusPedido.valueOf(status.toUpperCase())));
+
+                } catch (Exception e) {
+                        mv.addObject("pedidos", pedidoDAO.findAll());
+                }
+                return mv;
+        }
 
 }

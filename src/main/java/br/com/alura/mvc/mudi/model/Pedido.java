@@ -15,6 +15,8 @@ public class Pedido {
     private String urlProduto;
     private String urlImagem;
     private String descricao;
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
 
     public String getNome() {
         return this.nome;
