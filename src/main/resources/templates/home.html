@@ -50,12 +50,11 @@
                 <div th:text="${pedido.nome}"></div>
               </div>
               <div class="valor">
-                <h4>R$<span th:text="${pedido.getValor()}"></span></h4>
+                <h4><span th:text="${#numbers.formatCurrency(pedido.getValor())}"></span></h4>
                 em
-                <span class="verde">10x de R$
-                  <span th:text="${pedido.getValor()/10}"></span>
-                  sem juros </span><br />
-                <a href="#" class="linkPequeno"> ver meios de pagamento</a>
+                <span class="verde">10x de <span th:text="${#numbers.formatCurrency(pedido.getValor() / 10)}"></span>
+                  sem juros <br/>
+                  <a href="#" class="linkPequeno"> ver meios de pagamento</a>
               </div>
               <div class="descricao">
                 <p th:text="${pedido.getDescricao()}"></p>
