@@ -15,10 +15,13 @@
         <h1 class="link" onclick=" window.location.href = '/'">Mudi </h1>
       </div>
       <div class="d-flex flex ">
-        <a class="nav-item nav-link active text-light" href="/">Todos</a>
-        <a class="nav-item nav-link text-light" href="/aguardando">Aguardando</a>
-        <a class="nav-item nav-link text-light" href="/aprovado">Aprovado</a>
-        <a class="nav-item nav-link text-light" href="/entregue">Entregue</a>
+        <a th:classappend="${status} == 'todos' ? 'active'" class="nav-item nav-link text-light" href="/">Todos</a>
+        <a th:classappend="${status} == 'aguardando' ? 'active'" class="nav-item nav-link text-light"
+          href="/aguardando">Aguardando</a>
+        <a th:classappend="${status} == 'aprovado' ? 'active'" class="nav-item nav-link text-light"
+          href="/aprovado">Aprovado</a>
+        <a th:classappend="${status} == 'entregue' ? 'active'" class="nav-item nav-link text-light"
+          href="/entregue">Entregue</a>
       </div>
     </div>
     <div class="btnAdd">

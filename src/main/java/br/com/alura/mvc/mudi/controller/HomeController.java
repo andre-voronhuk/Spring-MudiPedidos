@@ -19,6 +19,7 @@ public class HomeController {
         public ModelAndView main() {
                 ModelAndView mv = new ModelAndView("home");
                 mv.addObject("pedidos", pedidoDAO.findAll());
+                mv.addObject("status", "todos");
                 return mv;
         }
 
@@ -28,9 +29,11 @@ public class HomeController {
 
                 try {
                         mv.addObject("pedidos", pedidoDAO.findByStatus(StatusPedido.valueOf(status.toUpperCase())));
+                        mv.addObject("status", status);
 
                 } catch (Exception e) {
                         mv.addObject("pedidos", pedidoDAO.findAll());
+                        mv.addObject("status", "todos");
                 }
                 return mv;
         }
