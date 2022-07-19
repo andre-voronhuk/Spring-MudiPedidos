@@ -28,7 +28,7 @@
             <h2 class="display-5">Novo Pedido</h1>
         </div>
 
-        <form th:object="${requestNovoProduto}" class="form" action="/pedido/novo" method="POST">
+        <form th:object="${requestNovoProduto}" class="form" th:action="@{/pedido/novo}" method="POST">
             <div>
                 <h3>Produto</h3>
                 <input th:field="*{nome}" th:errorclass="is-invalid" class="input-group" name="nome"

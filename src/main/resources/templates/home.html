@@ -26,7 +26,10 @@
     </div>
     <div class="btnAdd">
       <div class="session-gp">
-        <a class="text-light session-bt " href="/">Logout</a>
+        <a class="text-light session-bt " sec:authorize="!isAuthenticated()" href="/login">Login</a>
+        <a onclick="document.getElementById('form-Login').submit()" class="text-light session-bt "
+          sec:authorize="isAuthenticated()" href="#">Logout</a>
+        <form id="form-Login" th:action="@{/logout}" method="post"></form>
       </div>
       <a href="/pedido/formulario">
         <button class="btn btn-primary my-2 my-sm-0">
@@ -53,7 +56,7 @@
                 <h4><span th:text="${#numbers.formatCurrency(pedido.getValor())}"></span></h4>
                 em
                 <span class="verde">10x de <span th:text="${#numbers.formatCurrency(pedido.getValor() / 10)}"></span>
-                  sem juros <br/>
+                  sem juros <br />
                   <a href="#" class="linkPequeno"> ver meios de pagamento</a>
               </div>
               <div class="descricao">

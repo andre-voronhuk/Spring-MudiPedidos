@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head th:replace="~{base :: head}">
+
+</head>
+<style th:replace="~{base :: style}">
+</style>
+<title>Login</title>
+
+<body name="body">
+
+
+    <div id="conteudo">
+        <div>
+            <div class="w-25 input-group-lg m-auto mt-5 card-body">
+                <div class="form-group">
+
+                    <form th:action="@{/login}" method="post">
+                        <div class="form-group">
+                            <label for="username">Usuario</label>
+                            <input type="text" name="username" class="form-control" placeholder="usuario">
+                        </div>
+                        <div class="form-group">
+
+                            <label for="password">Senha</label>
+                            <input type="password" name="password" class="form-control" placeholder="senha">
+                        </div>
+                        <br>
+                        <input class="btn btn-primary w-100" value="Login" type="submit"> </input>
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

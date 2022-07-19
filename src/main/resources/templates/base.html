@@ -20,8 +20,8 @@
     body {
         padding: 0;
         margin: 0;
-
-        min-height: 100vh;
+        min-width: max-content;
+        min-height: 93.2vh;
         height: fit-content;
         color: #efefff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -185,7 +185,7 @@
     .anuncio {
         display: flex;
         padding: 0.5rem;
-        min-width: 50%;
+        min-width: 30rem;
         flex-direction: column;
         place-content: space-between;
     }
@@ -227,7 +227,7 @@
         border: 1px solid rgba(17, 17, 17, 0.3);
         border-radius: 5px;
         word-break: break-all;
-        min-width: fit-content;
+
         overflow-wrap: break-word;
         word-break: break-all;
         word-wrap: break-word;
@@ -250,11 +250,32 @@
         align-items: center;
     }
 
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 790px) {
         .btgroup {
             flex-direction: column;
             gap: 0.7rem;
         }
+
+        .navbar {
+            display: flex !important;
+            flex-direction: column;
+            align-items: flex-start !important;
+
+        }
+
+        .produto {
+            flex-direction: column;
+        }
+
+        .titulo {
+            text-align: center;
+        }
+
+        .imgWrap {
+            align-self: center;
+        }
+
+
     }
 
     @media only screen and (max-width: 600px) {
